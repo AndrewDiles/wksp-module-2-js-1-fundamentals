@@ -63,10 +63,19 @@ let currentWeather = 'rainy';
 
 // 2. If I am hungry, I eat.
 let hunger = true;
+if (hunger === true) {
+    console.log("I eat.");
+}
 
 // 3. If it's 10pm, I go to bed. If not, I write code.
 let currentHour = 22;
 
+if (currentHour === 22) {
+    console.log("I go to bed.");
+}
+else {
+    console.log("I write code.");
+}
 ```
 
 ## Loops
@@ -119,12 +128,23 @@ while (number <= 12) {
 // let's break that down.
 ```
 
+
 ---
 
 Let's write a function that outputs 2^10 (two to the power of ten).
 
 ```js
 // Example
+
+let x = 2;
+let i = 1;
+let y = x;
+while (i<=9>){
+    i++;
+    y*=x;
+}
+console.log(y);
+
 
 
 ```
@@ -181,6 +201,13 @@ Write a program that output all of the numbers from 0 to 25
 ```js
 // code here
 
+for (let i = 0; i < 26; i ++) {
+    
+        console.log(i);
+    
+
+}
+
 ```
 
 ---
@@ -189,8 +216,22 @@ Write a program that output all of the numbers from 0 to 25
 
 Write a program that output all of ODD the numbers from 0 to 25
 
+
+
 ```js
 // code here
+
+for (let i = 0; i < 26; i ++) {
+    if (i%2 === 1){
+        console.log(i);
+    }
+
+}
+
+or 
+for (let i = 1; i<26; i+=2>){
+    console.log(i);
+}
 
 ```
 
@@ -202,7 +243,18 @@ Write a program that output all of the numbers from 0 to 25, but replaces all mu
 
 ```js
 // code here
+for (let i = 0; i < 26; i ++) {
+    if (i === 0) {
+        console.log(i);
+    }
+    else if (i%5 === 0){
+        console.log('five alive!');
+    }
+    else {
+        console.log(i);
+    }
 
+}
 ```
 
 ---

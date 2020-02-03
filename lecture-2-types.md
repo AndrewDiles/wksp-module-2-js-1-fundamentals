@@ -4,12 +4,12 @@
 
 There are 6 basic types in JavaScript.
 
-- Strings
-- Booleans
-- Empty values
-- Numbers
-- Arrays
-- Objects
+- Strings   "bacon"
+- Booleans true false
+- Empty values null   ->  undefined
+- Numbers R
+- Arrays [1,2, 3]
+- Objects {name: "Fred", passtime: "meh"}
 
 ```js
 // Examples
@@ -25,8 +25,8 @@ If you are not sure of the type of a given value, you can use `typeof <VALUE>`
 Strings represent text. They are written/defined by wrapping the text in quotes.
 
 - Double quotes: "Your path you must decide."
-- Single quotes: 'Luminous beings are we…not this crude matter.'
-- Backticks: \`Do. Or do not. There is no try.\`
+- Single quotes: 'Luminous beings are we…not this crude matter.'  IDEAL
+- Backticks: \`Do. Or do not. There is no try.\`    SPECIAL   - string literal
 
 They are equally good... sort of.
 
@@ -48,7 +48,7 @@ let diameter = 14;
 let radius = diameter / 2;
 
 // declare a string
-let introduction = `The area of a circle is π^2.`
+let introduction = `The area of a circle is πr^2.`
 
 // declare a string with interpolation
 let example = `So a ${diameter} pizza has an area of ${pi * radius * radius}.`
@@ -57,7 +57,7 @@ let example = `So a ${diameter} pizza has an area of ${pi * radius * radius}.`
 let text = intro + ' ' + example
 
 console.log(text);
-// The area of a circle is π^2. So a 14 pizza has an area of 153.86.
+// The area of a circle is πr^2. So a 14 pizza has an area of 153.86.
 
 ```
 
@@ -159,7 +159,7 @@ Of course comparison operators and logical operators are usually combined in an 
 ```js
 // Look at these expressions below and determine whether they evaluate to true or false
 
-1. true || false
+1. true || false 
 2. false && false
 3. 1 < 2 && 2 > 1
 4. 31 < 13 || 1 < 2 && 3 > 1
@@ -168,7 +168,18 @@ Of course comparison operators and logical operators are usually combined in an 
 7. true && false || true || false
 8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1
 ```
+1. true
+2. false
+3. true
+4. true
+5. true
+6. false
+7. true
+8. false ? true : true 
 
+let gender = 'male'
+'Hello ${gender === 'male' ? 'Sir' : 'Miss'}
+returns 'Hello Sir'
 ---
 
 ## Exceptions, special cases and just plain annoying side-effects
@@ -177,9 +188,9 @@ Of course comparison operators and logical operators are usually combined in an 
 - `NaN` stands for "Not a number" even though it is itself a value of type "number" 🤦‍♂️
 - `NaN` is not equivalent to anything – including another `NaN`!
 - Automatic type conversion 😲
-    - `8 * null`
-    - `"5" - 1`
-    - `"5" + 1`
+    - `8 * null`  :  0
+    - `"5" - 1`  : 4
+    - `"5" + 1` : 51
     - TODO: add a few more weirdnesses
 
 ```js
@@ -193,7 +204,9 @@ Of course comparison operators and logical operators are usually combined in an 
 
 As well as a type, each value also has an inherent boolean value, generally known as either _truthy_ or _falsy_.
 
-The following values are ALWAYS _falsy_:
+The following values are ALWAYS _falsy_:   
+
+ <!-- == references truthy and faslsy values -->
 
 - `false`
 - `0` (zero)
@@ -293,9 +306,9 @@ Given this data structure:
 let data = [0, [], [], [1,2,3, [4]]]
 ```
 
-1. How would you access the value `0`?
-2. How would you access the value `3`?
-3. How would you access the value `4`?
+1. How would you access the value `0`? data [0]
+2. How would you access the value `3`? data [3][2]
+3. How would you access the value `4`? data [3][3][0]
 
 ---
 
@@ -310,6 +323,12 @@ This object has 3 properties.
 ```js
 // Example
 "it has a property with name 'givenName' and value of 'Yoda' of type string"
+
+let person = {name: 'Yoda'};
+person.name   //returns Yoda
+
+
+
 
 ```
 
@@ -347,6 +366,9 @@ Group the following items together according to their type:
 { ISBN: 53532, isAvailable: true, author: 'Nakamoto' };
 
 ```
+label: 'corn'  is the property
+label is key
+'corn' is value
 
 ---
 
@@ -374,8 +396,8 @@ let person = {name: 'Bob', age: 23};
 let name = 'John';
 
 // What is the value of the following expressions?
-1. person.name
-2. person['name']
+1. person.name   //retunrs 'Bob'
+2. person['name']  //retunrs 'Bob'
 3. person[name]
 
 ```
@@ -391,7 +413,7 @@ let person = {name: 'bob', age: 23};
 let key = 'name';
 
 // What is the value of the following expressions:
-1. person.key
+1. person.key  //simple.  dot notation can not grab values of variables
 2. person['key']
 3. person[key]
 
