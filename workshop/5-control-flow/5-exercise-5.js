@@ -16,3 +16,15 @@
 // It's 11h. Time to train!
 // It's 12h. Time to train!
 // It's 13h. Time to eat!
+
+for (let t = 0; t < 24; t ++) {
+    if(t<6 || t>21){
+        console.log('It\'s ' + t + 'h.  Time to sleep!');
+    }
+    else if(t===7||t===13||t===18){
+        console.log('It\'s ' + t + 'h.  Time to eat!');
+    }
+    else {
+        console.log('It\'s ' + t + 'h.  Time to train! X gon give it to ya!  Fuck waiting for you to get it on your own, X gonna deliver!  Knock knock...');
+    }
+}
